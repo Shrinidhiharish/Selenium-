@@ -14,18 +14,19 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import Repository.Inputforms_Repository;
+
 public class InputForms {
 	static WebDriver driver;
 
 	public static WebDriver simpleformdemo() throws InterruptedException, IOException {
 
+		Inputforms_Repository obj = new Inputforms_Repository(driver);
 		driver = NavigationBar.selectOperation();
-		driver.findElement(By.xpath("//ul[@class='dropdown-menu']/li/a")).click();
-		WebElement linkcount = driver.findElement(By.tagName("a"));
-		System.out.println("The total number of link present in present web page" + linkcount);
-		WebElement text=driver.findElement(By.xpath("//div[@class='panel-heading']"));
+		driver.findElement(obj.select()).click();
+		WebElement text=driver.findElement(obj.text());
 		System.out.println(text.getText());
-		return simpleforms();
+		 return simpleforms();
 		
 		
 	}
@@ -39,8 +40,9 @@ public class InputForms {
 			driver.findElement(By.xpath("//input[@id='sum1']")).sendKeys("1");
 			driver.findElement(By.xpath("//input[@id='sum2']")).sendKeys("2");
 			driver.findElement(By.xpath("//button[@onclick='return total()']")).click();
+			
 			File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(src,new File("E:\\Eclipse_Projects\\selenium.automation.learning\\Screenshot\\screen1.png")); 	
+			FileUtils.copyFile(src,new File("E:\\Eclipse_Projects\\selenium.automation.learning\\Screenshot\\screen2.png")); 	
 			return driver;
 		}
 		
