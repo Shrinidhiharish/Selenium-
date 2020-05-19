@@ -22,11 +22,11 @@ public class Sauce_Labs {
 
 
 
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		//DesiredCapabilities caps = DesiredCapabilities.chrome();
 
-		caps.setCapability("platform", "Windows 7");
+		//caps.setCapability("platform", "Windows 7");
 
-		caps.setCapability("version", "51.0");
+		//caps.setCapability("version", "51.0");
 
 		//WebDriver driver=new RemoteWebDriver(new URL(URL), caps);
 
